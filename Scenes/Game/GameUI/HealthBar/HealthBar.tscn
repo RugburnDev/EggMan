@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dro5pf26lbemh"]
+
+[ext_resource type="Script" uid="uid://bjsjk7rokh7w5" path="res://Scenes/Game/GameUI/HealthBar/HealthBar.gd" id="1_eha0t"]
+
+[node name="HealthBar" type="ProgressBar"]
+offset_right = 4.0
+offset_bottom = 27.0
+step = 1.0
+value = 100.0
+show_percentage = false
+script = ExtResource("1_eha0t")

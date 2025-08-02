@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://vnr7f3u8vefv"]
+
+[ext_resource type="Script" uid="uid://6ldu0xg5mdq3" path="res://Scenes/Player/Player.gd" id="1_s0eop"]
+[ext_resource type="SpriteFrames" uid="uid://dbwe4vnr8ftxa" path="res://Resources/PlayerSpriteFrames.tres" id="2_ft8w5"]
+[ext_resource type="Script" uid="uid://duqvneg3emi8n" path="res://Scenes/Player/PlayerMouthArea.gd" id="3_h54ih"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0eop"]
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h54ih"]
+radius = 5.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_s0eop")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_ft8w5")
+animation = &"dance_1"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_s0eop")
+
+[node name="Mouth_Area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("3_h54ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouth_Area"]
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h54ih")

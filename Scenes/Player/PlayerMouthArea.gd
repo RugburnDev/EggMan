@@ -1,0 +1,2 @@
+class_name PlayerMouthArea
+extends Area2D

@@ -1,0 +1,25 @@
+# Godot 4+ specific ignores
+/android/
+
+# Godot generated files
+.godot/
+export/
+Demo/
+*.translation
+
+# Build artifacts
+*.exe
+*.zip
+*.pck
+*.tscn.converted
+
+# Temporary files
+*.bak
+*.log
+
+# User-specific settings (optional)
+# .mono/
+
+# macOS-specific files
+.DS_Store
+Icon?

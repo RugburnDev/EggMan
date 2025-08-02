@@ -1,0 +1,207 @@
+[gd_scene load_steps=8 format=3 uid="uid://c37fl1ylm0awh"]
+
+[ext_resource type="Script" uid="uid://clxehmwyvppcc" path="res://Scenes/Game/GameUI/GameUi.gd" id="1_asbn4"]
+[ext_resource type="LabelSettings" uid="uid://io8rcuvlmxql" path="res://Resources/Text/white_label_32.tres" id="1_t7lh7"]
+[ext_resource type="LabelSettings" uid="uid://cfbdwxov0dd2p" path="res://Resources/Text/white_label_18.tres" id="2_asbn4"]
+[ext_resource type="PackedScene" uid="uid://dro5pf26lbemh" path="res://Scenes/Game/GameUI/HealthBar/HealthBar.tscn" id="3_41bcb"]
+[ext_resource type="AudioStream" uid="uid://b2etllu4nak6o" path="res://assets/sounds/BGM OGG/Menu_-_Thought_Patterns.ogg" id="4_7jlkk"]
+[ext_resource type="FontFile" uid="uid://bcbo6rxhaj56u" path="res://assets/fonts/Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="4_nhjay"]
+[ext_resource type="LabelSettings" uid="uid://dfwtbiusjrk7k" path="res://Resources/Text/white_label_68.tres" id="5_nhjay"]
+
+[node name="Game_UI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asbn4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "000"
+label_settings = ExtResource("2_asbn4")
+
+[node name="HealthBar" parent="MarginContainer" instance=ExtResource("3_41bcb")]
+custom_minimum_size = Vector2(150, 18)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7jlkk")
+volume_db = -10.0
+autoplay = true
+
+[node name="GameOverOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fade" type="ColorRect" parent="GameOverOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.333333)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -55.0
+offset_right = 183.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverOverlay/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = ExtResource("5_nhjay")
+horizontal_alignment = 1
+
+[node name="GameOverEscLabel" type="Label" parent="GameOverOverlay/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "Press Esc to return to menu"
+label_settings = ExtResource("2_asbn4")
+horizontal_alignment = 1
+
+[node name="HighscoreOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fade" type="ColorRect" parent="HighscoreOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.333333)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HighscoreOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -55.0
+offset_right = 183.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HighscoreLabel" type="Label" parent="HighscoreOverlay/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "HIGH SCORE!"
+label_settings = ExtResource("5_nhjay")
+horizontal_alignment = 1
+
+[node name="UserInitials" type="LineEdit" parent="HighscoreOverlay/VBoxContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_nhjay")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "INITIALS"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink = true
+
+[node name="SaveScoreButton" type="Button" parent="HighscoreOverlay/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_nhjay")
+theme_override_font_sizes/font_size = 18
+text = "Save Score"
+flat = true
+
+[node name="PausedOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fade" type="ColorRect" parent="PausedOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.333333)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausedOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -20.0
+offset_right = 57.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausedLabel" type="Label" parent="PausedOverlay/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+label_settings = ExtResource("1_t7lh7")
+horizontal_alignment = 1
+
+[node name="EscLabel_2" type="Label" parent="PausedOverlay/VBoxContainer"]
+layout_mode = 2
+text = "Press Esc to return to quit"
+label_settings = ExtResource("2_asbn4")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HighscoreOverlay/VBoxContainer/SaveScoreButton" to="." method="_on_save_score_button_pressed"]

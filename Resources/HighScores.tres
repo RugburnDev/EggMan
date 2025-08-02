@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Highscores" load_steps=3 format=3 uid="uid://b6cjmtbhw2b3h"]
+
+[ext_resource type="Script" uid="uid://brgcog6vgtuw5" path="res://Classes/HighScore.gd" id="1_uenx8"]
+[ext_resource type="Script" uid="uid://hb22vfnolj0e" path="res://Classes/HighScores.gd" id="2_bw6bv"]
+
+[resource]
+script = ExtResource("2_bw6bv")
+_highscores = Array[ExtResource("1_uenx8")]([])
+metadata/_custom_type_script = "uid://hb22vfnolj0e"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://co5yqt8urrjpe"
+path="res://.godot/imported/Town_-_Neo_Tokyo.ogg-45eeee2c292cef9c6da8937bad5e864d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Town_-_Neo_Tokyo.ogg"
+dest_files=["res://.godot/imported/Town_-_Neo_Tokyo.ogg-45eeee2c292cef9c6da8937bad5e864d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

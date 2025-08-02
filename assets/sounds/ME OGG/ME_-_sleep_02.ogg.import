@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://heoxd1cjcn88"
+path="res://.godot/imported/ME_-_sleep_02.ogg-e8a4cbb559ab3baa53ce45bb1aa835ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/ME OGG/ME_-_sleep_02.ogg"
+dest_files=["res://.godot/imported/ME_-_sleep_02.ogg-e8a4cbb559ab3baa53ce45bb1aa835ee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7mmic2aqpd72"
+path="res://.godot/imported/Battle_-_Electric_Pulsar.ogg-d444716b92fb0d21a88a370d0f577a57.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Battle_-_Electric_Pulsar.ogg"
+dest_files=["res://.godot/imported/Battle_-_Electric_Pulsar.ogg-d444716b92fb0d21a88a370d0f577a57.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

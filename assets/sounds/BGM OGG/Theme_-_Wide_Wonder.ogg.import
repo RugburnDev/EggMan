@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3bcdp8sjmkfm"
+path="res://.godot/imported/Theme_-_Wide_Wonder.ogg-050b5f42aa2b0e1549e8fb2c8b97c8ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Theme_-_Wide_Wonder.ogg"
+dest_files=["res://.godot/imported/Theme_-_Wide_Wonder.ogg-050b5f42aa2b0e1549e8fb2c8b97c8ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjtf2kopghap4"
+path="res://.godot/imported/Battle_-_Scrap_Metal.ogg-58efa0602c4c98324acd70f4f04dc0f1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Battle_-_Scrap_Metal.ogg"
+dest_files=["res://.godot/imported/Battle_-_Scrap_Metal.ogg-58efa0602c4c98324acd70f4f04dc0f1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

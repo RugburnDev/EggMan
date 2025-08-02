@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c10ky4foefotb"]
+
+[ext_resource type="Texture2D" uid="uid://hd0a0i6ovnve" path="res://assets/egg.png" id="1_t5s5d"]
+[ext_resource type="Script" uid="uid://wc3ojarmwxdo" path="res://Scenes/Egg/Egg.gd" id="1_wg7ll"]
+[ext_resource type="AudioStream" uid="uid://1tqfnp2flji2" path="res://assets/sounds/foxy/pickup3.ogg" id="3_qubuc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5s5d"]
+radius = 3.0
+height = 8.0
+
+[node name="Egg" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_wg7ll")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t5s5d")
+hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_t5s5d")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qubuc")
+volume_db = -10.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="Sound" to="." method="_on_sound_finished"]

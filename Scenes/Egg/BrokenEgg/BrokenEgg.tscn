@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://b5ncrya7w6j7p"]
+
+[ext_resource type="Texture2D" uid="uid://hd0a0i6ovnve" path="res://assets/egg.png" id="1_40goh"]
+[ext_resource type="Script" uid="uid://dccbjrgt8klce" path="res://Scenes/Egg/BrokenEgg/BrokenEgg.gd" id="2_873f1"]
+[ext_resource type="AudioStream" uid="uid://cixb8tlthvxsy" path="res://assets/sounds/foxy/impact.wav" id="3_a621j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_873f1"]
+atlas = ExtResource("1_40goh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a621j"]
+atlas = ExtResource("1_40goh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4oje"]
+atlas = ExtResource("1_40goh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6d8o"]
+atlas = ExtResource("1_40goh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le3b6"]
+atlas = ExtResource("1_40goh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxf4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_873f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a621j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4oje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6d8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le3b6")
+}],
+"loop": false,
+"name": &"crack",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_a621j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_873f1"]
+resource_name = "fade_away"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4oje"]
+_data = {
+&"RESET": SubResource("Animation_a621j"),
+&"fade_away": SubResource("Animation_873f1")
+}
+
+[node name="BrokenEgg" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wxf4e")
+animation = &"crack"
+autoplay = "crack"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("2_873f1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c4oje")
+}
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a621j")
+autoplay = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

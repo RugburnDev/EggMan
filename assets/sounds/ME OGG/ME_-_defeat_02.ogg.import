@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7kdto1ux47yy"
+path="res://.godot/imported/ME_-_defeat_02.ogg-8b153cb2a32d05bcca4105d57afe1f92.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/ME OGG/ME_-_defeat_02.ogg"
+dest_files=["res://.godot/imported/ME_-_defeat_02.ogg-8b153cb2a32d05bcca4105d57afe1f92.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

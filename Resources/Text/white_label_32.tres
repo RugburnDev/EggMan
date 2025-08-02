@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://io8rcuvlmxql"]
+
+[ext_resource type="FontFile" uid="uid://bcbo6rxhaj56u" path="res://assets/fonts/Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="1_jl1v5"]
+
+[resource]
+font = ExtResource("1_jl1v5")
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

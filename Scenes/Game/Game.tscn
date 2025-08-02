@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://vfkcmkiintak"]
+
+[ext_resource type="PackedScene" uid="uid://vnr7f3u8vefv" path="res://Scenes/Player/Player.tscn" id="1_rdw05"]
+[ext_resource type="Script" uid="uid://bowmr5ta06msb" path="res://Scenes/Game/Game.gd" id="1_xbxml"]
+[ext_resource type="PackedScene" uid="uid://c37fl1ylm0awh" path="res://Scenes/Game/GameUI/GameUi.tscn" id="3_xbxml"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iwuib"]
+distance = -1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rdw05"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gwu2e"]
+distance = -3.0
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_xbxml")
+metadata/_edit_vertical_guides_ = [735.0]
+metadata/_edit_horizontal_guides_ = [425.0]
+
+[node name="Floor" type="Line2D" parent="."]
+z_index = -1
+position = Vector2(0, 451)
+points = PackedVector2Array(-1, 0, 760, 0)
+width = 1.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, 450)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Floor"]
+shape = SubResource("WorldBoundaryShape2D_iwuib")
+
+[node name="L_Wall" type="StaticBody2D" parent="Boundaries"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L_Wall"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_rdw05")
+
+[node name="R_Wall" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(760, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R_Wall"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_gwu2e")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_rdw05")]
+position = Vector2(313, 422)
+
+[node name="UI_Layer" type="CanvasLayer" parent="."]
+
+[node name="Game_UI" parent="UI_Layer" instance=ExtResource("3_xbxml")]
+
+[node name="EggContainer" type="Node" parent="."]
+
+[node name="EggTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[node name="EggDropLimits" type="Node" parent="."]
+
+[node name="LeftMarker" type="Marker2D" parent="EggDropLimits"]
+position = Vector2(90, -15)
+
+[node name="RightMarker" type="Marker2D" parent="EggDropLimits"]
+position = Vector2(690, -15)
+
+[connection signal="timeout" from="EggTimer" to="." method="_on_egg_timer_timeout"]

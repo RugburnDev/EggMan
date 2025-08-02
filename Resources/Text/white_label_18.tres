@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cfbdwxov0dd2p"]
+
+[ext_resource type="FontFile" uid="uid://bcbo6rxhaj56u" path="res://assets/fonts/Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="1_akwda"]
+
+[resource]
+font = ExtResource("1_akwda")
+font_size = 18
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

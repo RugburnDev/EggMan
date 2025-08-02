@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi11xr0kmuyla"
+path="res://.godot/imported/Drone_-_Processing_Substation.ogg-5fbd56f24345c26edb6c2571bcf08e5c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Drone_-_Processing_Substation.ogg"
+dest_files=["res://.godot/imported/Drone_-_Processing_Substation.ogg-5fbd56f24345c26edb6c2571bcf08e5c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

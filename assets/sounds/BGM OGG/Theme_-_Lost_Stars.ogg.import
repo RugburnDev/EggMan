@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bru2tjx3iimch"
+path="res://.godot/imported/Theme_-_Lost_Stars.ogg-0fae242df869a4ee53669f12ace1a534.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Theme_-_Lost_Stars.ogg"
+dest_files=["res://.godot/imported/Theme_-_Lost_Stars.ogg-0fae242df869a4ee53669f12ace1a534.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

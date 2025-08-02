@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4lt3diem6kw1"
+path="res://.godot/imported/Drone_-_Industrial_Organs.ogg-56922bf707266f54342f5039cacc1aaf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Drone_-_Industrial_Organs.ogg"
+dest_files=["res://.godot/imported/Drone_-_Industrial_Organs.ogg-56922bf707266f54342f5039cacc1aaf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

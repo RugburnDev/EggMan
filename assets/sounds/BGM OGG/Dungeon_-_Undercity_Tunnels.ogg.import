@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl0p3b0nwdps"
+path="res://.godot/imported/Dungeon_-_Undercity_Tunnels.ogg-eddf5df3e86e6675dd9c425889194aab.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Dungeon_-_Undercity_Tunnels.ogg"
+dest_files=["res://.godot/imported/Dungeon_-_Undercity_Tunnels.ogg-eddf5df3e86e6675dd9c425889194aab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

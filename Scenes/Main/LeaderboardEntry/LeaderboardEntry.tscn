@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://deahrkp4rgrod"]
+
+[ext_resource type="Script" uid="uid://b6mjs7efp87qh" path="res://Scenes/Main/LeaderboardEntry/LeaderboardEntry.gd" id="1_gaygc"]
+[ext_resource type="LabelSettings" uid="uid://cfbdwxov0dd2p" path="res://Resources/Text/white_label_18.tres" id="1_hc35h"]
+
+[node name="LeaderboardEntry" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.5
+offset_right = 94.5
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+alignment = 1
+script = ExtResource("1_gaygc")
+
+[node name="InitialsLabel" type="Label" parent="."]
+layout_mode = 2
+text = "XXX"
+label_settings = ExtResource("1_hc35h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("1_hc35h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+text = "20250101"
+label_settings = ExtResource("1_hc35h")
+horizontal_alignment = 1
+vertical_alignment = 1

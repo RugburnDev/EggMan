@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://x3ovp8wbamly"
+path="res://.godot/imported/Town_-_Elysian_Towers.ogg-22e51d10b25a48a9b253bff004ee3281.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Town_-_Elysian_Towers.ogg"
+dest_files=["res://.godot/imported/Town_-_Elysian_Towers.ogg-22e51d10b25a48a9b253bff004ee3281.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://bosa18e0rprpb"]
+
+[ext_resource type="Script" uid="uid://cec0b001k54en" path="res://Scenes/Main/Main.gd" id="1_i3fi7"]
+[ext_resource type="LabelSettings" uid="uid://dfwtbiusjrk7k" path="res://Resources/Text/white_label_68.tres" id="1_qtv3y"]
+[ext_resource type="AudioStream" uid="uid://dmtf7sfao0w1" path="res://assets/sounds/BGM OGG/Menu_-_External_Memory.ogg" id="2_cmk6n"]
+[ext_resource type="LabelSettings" uid="uid://io8rcuvlmxql" path="res://Resources/Text/white_label_32.tres" id="3_cmk6n"]
+
+[sub_resource type="Animation" id="Animation_o8wgc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/PressPlayLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i3fi7"]
+resource_name = "flash_text"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/PressPlayLabel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0784314), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.0784314)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w20t6"]
+_data = {
+&"RESET": SubResource("Animation_o8wgc"),
+&"flash_text": SubResource("Animation_i3fi7")
+}
+
+[node name="Main" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3fi7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39, 0.39, 0.39, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cmk6n")
+volume_db = -10.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w20t6")
+}
+autoplay = "flash_text"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "EGG MAN"
+label_settings = ExtResource("1_qtv3y")
+horizontal_alignment = 1
+
+[node name="PressPlayLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PRESS SPACE TO PLAY"
+label_settings = ExtResource("3_cmk6n")
+horizontal_alignment = 1
+
+[node name="LeaderboardSC" type="ScrollContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 8
+scroll_vertical_custom_step = 1.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="LeaderboardVB" type="VBoxContainer" parent="MarginContainer/LeaderboardSC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+alignment = 1

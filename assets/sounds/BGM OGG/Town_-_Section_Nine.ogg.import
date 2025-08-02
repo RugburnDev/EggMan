@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr03sd0lvw5au"
+path="res://.godot/imported/Town_-_Section_Nine.ogg-a61f5a3b5666455efb3576c03193ebc9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/BGM OGG/Town_-_Section_Nine.ogg"
+dest_files=["res://.godot/imported/Town_-_Section_Nine.ogg-a61f5a3b5666455efb3576c03193ebc9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
